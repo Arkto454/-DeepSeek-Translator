@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Visible prose regression fixture</title>
+<style>
+  body { max-width: 760px; margin: 32px auto; font: 17px/1.6 system-ui; }
+  .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
+  .spacer { height: 1800px; }
+  #scroller { height: 48px; overflow: auto; border: 1px solid; }
+  #clipped { padding-top: 200px; }
+  #settings { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+</style>
+<nav><a id="nav-link" href="#help"><span>Navigation home</span></a></nav>
+<main>
+<span id="tiny-label">Bio</span>
+<div style="display:flex" id="flex-ui"><span>Account settings</span><button type="button">Cancel</button></div>
+<input id="empty-search" placeholder="Search documentation">
+<select id="label-option"><option label="Public visibility" value="public">OPTION_LABEL_SECRET</option></select>
+  <h1>Visible reading fixture</h1>
+  <p id="visible">VISIBLE_PROSE: This paragraph is readable now.<span style="display:none">HIDDEN_INLINE_SECRET should never be sent.</span></p>
+  <div id="settings"><div id="select-wrapper"><label for="timezone">Choose a timezone</label><select id="timezone"><option>TIMEZONE_PRIVATE_ALPHA</option><option>TIMEZONE_PRIVATE_BETA</option><option>TIMEZONE_PRIVATE_GAMMA</option></select></div><div id="input-wrapper"><input id="profile-name" value="PRIVATE_INPUT_VALUE"></div></div>
+  <form id="form"><h2>FORM_PRIVATE_HEADING</h2><p>FORM_PRIVATE_PROSE should not be translated.</p><textarea>PRIVATE_TEXTAREA_VALUE</textarea><button>Save profile settings</button></form>
+  <div hidden><p>HIDDEN_ATTRIBUTE_SECRET should never be sent.</p></div>
+  <div style="display:none"><p>DISPLAY_NONE_SECRET should never be sent.</p></div>
+  <div style="visibility:hidden"><p>VISIBILITY_SECRET should never be sent.</p></div>
+  <div style="opacity:0"><p>OPACITY_SECRET should never be sent.</p></div>
+  <span class="sr-only">SCREEN_READER_SECRET should never be sent.</span>
+  <div style="display:none">HIDDEN_OPTIONS_SECRET <span>unseen content</span></div>
+  <div contenteditable="true"><p>EDITABLE_PRIVATE_CONTENT should never be sent.</p></div>
+  <div id="scroller"><div id="clipped"><p>CLIPPED_PROSE should not be sent until scrolled into view.</p></div></div>
+  <details id="collapsed"><summary>Expand article</summary><p id="detail">COLLAPSED_PROSE should translate only after expanding.</p></details>
+  <p id="mixed">MIXED_VISIBLE: Read this explanation.<span class="sr-only">NESTED_SCREEN_READER_SECRET should never be sent.</span></p>
+  <div id="delayed" style="display:none"><p>REVEALED_PROSE becomes visible after a style change.</p></div>
+  <div class="spacer" aria-hidden="true"></div>
+  <p id="offscreen">OFFSCREEN_PROSE should translate only when the reader scrolls here.</p>
+  <p id="queued">QUEUED_PROSE must be rechecked immediately before sending.</p>
+</main>
+</html>

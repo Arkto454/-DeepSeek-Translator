@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Local environment files and extension signing keys
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Build and packaged extensions
+/dist/
+/build/
+*.crx
+/*.zip
+
+# Logs and generated test reports
+*.log
+/coverage/
+/playwright-report/
+/test-results/
+
+# Browser test artifacts; retain README preview images
+/artifacts/*
+!/artifacts/dashboard-desktop.png
+!/artifacts/dashboard-mobile.png
+!/artifacts/bilingual-reading.png
+
+# OS and editor temporary files
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# Local development roadmap
+/DEVELOPMENT_PLAN.md
